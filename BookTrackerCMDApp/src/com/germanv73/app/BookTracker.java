@@ -53,14 +53,23 @@ public class BookTracker {
 			System.out.println("There are no saved books.");
 		System.out.println();
 	}
-
-	public boolean queryBook(int number) {
-		if (bookList.get(number - 1).getTitle() != null) {
-			return true;
+	
+	public boolean findBook(String bookName) {
+		boolean result = false;
+		for (int i=0; i<bookList.size(); i++) {
+			if (bookList.get(i).getTitle().equals(bookName)) {
+				result = true;
+			}
 		}
-		else {
-			return false;
-		}
+		return result;
 	}
+//	public boolean queryBook(int number) {
+//		if (bookList.get(number - 1).getTitle() != null) {
+//			return true;
+//		}
+//		else {
+//			return false;
+//		}
+//	}
 
 }
